@@ -1,0 +1,9 @@
+{
+	"name": "alissondata",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "aa8496a9-f710-4543-a93c-11ddee7351cf",
+		"tenantId": "eb29b493-051f-463b-bd10-27eb6054dc7c"
+	}
+}
