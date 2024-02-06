@@ -1,0 +1,98 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "alissondata"
+		},
+		"GinaAlisson_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'GinaAlisson'"
+		},
+		"inputfiles_ADLS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'inputfiles_ADLS'"
+		},
+		"inputfilescopy_adls_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'inputfilescopy_adls'"
+		},
+		"outputfiles_adls_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'outputfiles_adls'"
+		},
+		"GinaAlisson_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0203-010247-d9x5puqa"
+		},
+		"inputfiles_ADLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://alissonfigueroa.dfs.core.windows.net/"
+		},
+		"inputfilescopy_adls_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://alissonfigueroa.dfs.core.windows.net/"
+		},
+		"outputfiles_adls_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://alissonfigueroa.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "alissondata_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"GinaAlisson_accessToken": {
+						"value": "[parameters('GinaAlisson_accessToken')]"
+					},
+					"inputfiles_ADLS_accountKey": {
+						"value": "[parameters('inputfiles_ADLS_accountKey')]"
+					},
+					"inputfilescopy_adls_accountKey": {
+						"value": "[parameters('inputfilescopy_adls_accountKey')]"
+					},
+					"outputfiles_adls_accountKey": {
+						"value": "[parameters('outputfiles_adls_accountKey')]"
+					},
+					"GinaAlisson_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('GinaAlisson_properties_typeProperties_existingClusterId')]"
+					},
+					"inputfiles_ADLS_properties_typeProperties_url": {
+						"value": "[parameters('inputfiles_ADLS_properties_typeProperties_url')]"
+					},
+					"inputfilescopy_adls_properties_typeProperties_url": {
+						"value": "[parameters('inputfilescopy_adls_properties_typeProperties_url')]"
+					},
+					"outputfiles_adls_properties_typeProperties_url": {
+						"value": "[parameters('outputfiles_adls_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

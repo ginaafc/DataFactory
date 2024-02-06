@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "alissondata"
+		},
+		"GinaAlisson_accessToken": {
+			"value": ""
+		},
+		"inputfiles_ADLS_accountKey": {
+			"value": ""
+		},
+		"inputfilescopy_adls_accountKey": {
+			"value": ""
+		},
+		"outputfiles_adls_accountKey": {
+			"value": ""
+		},
+		"GinaAlisson_properties_typeProperties_existingClusterId": {
+			"value": "0203-010247-d9x5puqa"
+		},
+		"inputfiles_ADLS_properties_typeProperties_url": {
+			"value": "https://alissonfigueroa.dfs.core.windows.net/"
+		},
+		"inputfilescopy_adls_properties_typeProperties_url": {
+			"value": "https://alissonfigueroa.dfs.core.windows.net/"
+		},
+		"outputfiles_adls_properties_typeProperties_url": {
+			"value": "https://alissonfigueroa.dfs.core.windows.net/"
+		}
+	}
+}
